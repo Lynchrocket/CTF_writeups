@@ -230,7 +230,7 @@ SELECT * FROM users WHERE name='\' AND pass='or 1=1 and name='flag'--';
 ```sql
 SELECT * FROM users WHERE name='flag'
 ```
-很可惜不行，或许是构造错了？
+很可惜不行，或许是构造错了？（确实是错了，sql里and的优先级高于or）
 
 既然如此，那就暴力一行一行查，构造如下（及等价语句）（第一行）
 ```url
