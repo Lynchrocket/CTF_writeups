@@ -166,7 +166,7 @@ preg_match()用于在目标字符串中搜索指定的正则表达式，只匹�
 clean()函数解读：
 
 * get_magic_quotes_gpc() 能取得 PHP 环境配置的变量 magic_quotes_gpc (GPC, Get/Post/Cookie) 值。返回 0 表示关闭本功能；返回 1 表示本功能打开。当 magic_quotes_gpc 打开时，所有的 ' (单引号), " (双引号), \ (反斜杠) 和 ' ' (空字符)会自动转为含有反斜杠的溢出字符。（[php中get_magic_quotes_gpc()函数说明](https://blog.csdn.net/xiaoxinshuaiga/article/details/80208427)）
-* stripslashes() 会删除由 addslashes() 函数添加的反斜杠。[PHP stripslashes() 函数](https://www.runoob.com/php/func-string-stripslashes.html)）即 
+* stripslashes() 会删除由 addslashes() 函数添加的反斜杠。（[PHP stripslashes() 函数](https://www.runoob.com/php/func-string-stripslashes.html））即 
   ```php
   <?php
     $str1 = "Who\'s Peter Griffin?";
