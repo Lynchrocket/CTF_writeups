@@ -108,3 +108,102 @@ DS_Store 文件的主要作用，是存储当前文件夹在桌面显示相关�
 > 
 > The search endpoint is only helpful for telling you if you are admin or not, you won't be able to guess the flag name.
 
+## where are the robots
+> Can you find the robots?
+> https://jupiter.challenges.picoctf.org/problem/36474/
+
+> What part of the website could tell you where the creator doesn't want you to look?
+
+同样是在url后加 /robots.txt，看到界面。
+
+![ro1](pic/ro1.png)
+
+根据提示访问 /477ce.html，得flag：picoCTF{ca1cu1at1ng_Mach1n3s_477ce}
+
+![ro2](pic/ro2.png)
+
+## logon
+> The factory is hiding things from all of its users. Can you login as Joe and find what they've been looking at? 
+> https://jupiter.challenges.picoctf.org/problem/13594/
+
+> Hmm it doesn't seem to check anyone's password, except for Joe's?
+
+打开链接，随便输入用户名和密码，发现登录成功但是无法查看flag。
+
+![logon1](pic/logon1.png)
+
+换用Burp Suite抓包看看。先不要拦截，登陆后再拦截，并Send to Repeater。
+
+![logon2](pic/logon2.png)
+
+可以看到这里的admin是false。或许是因为这个而看不到flag？试着修改为true再send。
+
+果然，得flag：picoCTF{th3_c0nsp1r4cy_l1v3s_d1c24fef}
+
+![logon3](pic/logon3.png)
+
+## dont-use-client-side
+> Can you break into this super secure portal? 
+> https://jupiter.challenges.picoctf.org/problem/37821/ 
+
+> Never trust the client
+
+打开链接，F12，查看源码。
+
+![dont1](pic/dont1.png)
+
+按照顺序拼接出flag：picoCTF{no_clients_plz_1a3c89}
+
+## It is my Birthday
+> I sent out 2 invitations to all of my friends for my birthday! I'll know if they get stolen because the two invites look similar, and they even have the same md5 hash, but they are slightly different! You wouldn't believe how long it took me to find a collision. Anyway, see if you're invited by submitting 2 PDFs to my website.
+> http://mercury.picoctf.net:63578/
+
+> Look at the category of this problem.
+> 
+> How may a PHP site check the rules in the description?
+
+根据提示，需要提交两个有相同md5值的pdf文件，上网可以找到。
+
+https://github.com/corkami/collisions/blob/master/examples/free/md5-1.pdf
+
+https://github.com/corkami/collisions/blob/master/examples/free/md5-2.pdf
+
+下载下来提交后可以看到php源码，里面有flag：picoCTF{c0ngr4ts_u_r_1nv1t3d_5c8c5ce2}
+
+![bir](pic/bir.png)
+
+## Who are you?
+> Let me in. Let me iiiiiiinnnnnnnnnnnnnnnnnnnn 
+> http://mercury.picoctf.net:36622/
+
+> It ain't much, but it's an RFC https://tools.ietf.org/html/rfc2616
+
+前置知识：[http文件头详解](https://www.cnblogs.com/tiwlin/archive/2009/09/06/1561279.html)
+
+用Burp Suite抓包，send to repeater。发送后看到如下图，故修改User-Agent为PicoBrowser
+
+![who1](pic/who1.png)
+
+发送后看到如下图，故修改Referer为http://mercury.picoctf.net:36622/
+
+![who2](pic/who2.png)
+
+发送后看到如下图，故修改Date为 Mon, 11 11 2018 12:12:12
+
+![who3](pic/who3.png)
+
+发送后看到如下图，故修改DNT为1
+
+![who4](pic/who4.png)
+
+发送后看到如下图，故修改X-Forwarded-For为193.150.233.115
+
+![who5](pic/who5.png)
+
+发送后看到如下图，故修改Accept-Language为sv
+
+![who6](pic/who6.png)
+
+最终得flag：picoCTF{http_h34d3rs_v3ry_c0Ol_much_w0w_0da16bb2}
+
+![who7](pic/who7.png)
