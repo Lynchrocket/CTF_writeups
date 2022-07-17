@@ -72,3 +72,18 @@ print('finish')
 得flag：picoCTF{l0t5_0f_TAR5}
 
 ![flag](pic/flag.png)
+
+## upper-lower case
+> In a past event, I'm working on the challenges with Frankss and monad. We are very close to the answer, with only one little problem: we don't know the upper/lower case of the final flag.
+>
+> So, let's try to guess it.
+>
+> Possible flag: y0u_re4lly_kn0w_th1s_congr4tulat10ns
+>
+> MD5 of the correct flag: 7513209051f455fa44d0fa5cd0f3e051
+
+
+
+
+
+## 
