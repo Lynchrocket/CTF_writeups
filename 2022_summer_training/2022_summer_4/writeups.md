@@ -32,7 +32,7 @@
 
 ![wp3](pic/wp3.png)
 
-在 [Binary to Text Translator](https://www.rapidtables.com/convert/number/binary-to-ascii.html) 中将结果转成字符，得flag：picoCTF{not_all_spaces_are_created_equal_3e2423081df9adab2a9d96afda4cfad6}
+在 CyberChef 中将结果转成字符，得flag：picoCTF{not_all_spaces_are_created_equal_3e2423081df9adab2a9d96afda4cfad6}
 
 ![wp4](pic/wp4.png)
 
