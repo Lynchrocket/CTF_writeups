@@ -36,16 +36,16 @@
 
 下载附件并解压。用Exeinfo查壳
 
-![](pic/re21.png)
+![re21](pic/re21.png)
 
 无壳，64位。用IDA打开。
 
-![](pic/re22.png)
+![re22](pic/re22.png)
 
 f5生成伪代码后点进flag
 
-![](pic/re23.png)
-![](pic/re24.png)
+![re23](pic/re23.png)
+![re24](pic/re24.png)
 
 对伪代码审计发现，最终的flag对{hacking_for_fun}的'i'和'r'都替换成了'1'。于是flag为：flag{hack1ng_fo1_fun}
 
@@ -54,25 +54,25 @@ f5生成伪代码后点进flag
 
 下载附件并解压。用Exeinfo查壳
 
-![](pic/re31.png)
+![re31](pic/re31.png)
 
 无壳，32位。用ida打开，shift+f12打开字符串窗口
 
-![](pic/re32.png)
+![re32](pic/re32.png)
 
 点击进入，按x追踪，f5生成伪代码
 
-![](pic/re33.png)
+![re33](pic/re33.png)
 
 审计伪代码可知，读入Str后，会经过一个叫sub_4110BE的函数处理，再经过一个for循环处理，最终处理出来的结果就是Str2。点进去可以看到Str2是'e3nifIH9b_C@n@dH'
 
 双击进入sub_4110BE函数，里面还有一层叫sub_411AB0的函数，再次双击进入。
 
-![](pic/re34.png)
+![re34](pic/re34.png)
 
 看起来有点熟悉，似乎是base64？点进aAbcdefghijklmn看看
 
-![](pic/re35.png)
+![re35](pic/re35.png)
 
 应该是了。尝试一下
 
@@ -99,14 +99,14 @@ print(base64.b64decode(Str2_c))
 
 下载附件并解压。用Exeinfo查壳
 
-![](pic/xn1.png)
+![xn1](pic/xn1.png)
 
 有壳，32位。拖到kali里用命令 `upx -d 新年快乐.exe` 脱壳。
 
-![](pic/xn2.png)
+![xn2](pic/xn2.png)
 
 脱完壳后用ida打开。
 
-![](pic/xn3.png)
+![xn3](pic/xn3.png)
 
 flag就是flag{HappyNewYear!}
