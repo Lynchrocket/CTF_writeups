@@ -109,4 +109,12 @@ print(base64.b64decode(Str2_c))
 
 ![xn3](pic/xn3.png)
 
+生成的伪代码似乎有点错误，查阅资料发现可能是堆栈不平衡导致的。尝试手动脱壳。
+
+用x32dbg打开该exe文件，在断点处看到pushad。
+
+![xn4](pic/xn4.png)
+
+点进去
+
 flag就是flag{HappyNewYear!}
