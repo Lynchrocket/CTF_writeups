@@ -464,3 +464,16 @@ print(key_part_static1_trial + ''.join(key) + key_part_static2_trial)
 ## Basic Android RE 1
 > A simple APK, reverse engineer the logic, recreate the flag, and submit!
 
+给一个.apk附件，很多工具都能做安卓apk逆向。我用的是 [Decompilers online](http://www.javadecompilers.com/).
+
+逆向完成后，在sources/com/example/secondapp/MainActivity.java路径下可以看到如下程序。
+
+![apk](pic/apk.png)
+
+已经给出了flag的头尾：CTFlearn{ 和 _is_not_secure!} 。中间部分由md5加密后的b74dec4f39d35b6a2e6c48e637c8aedb给出。
+
+用这个[md5在线解密](https://www.somd5.com/)能查出对应的明文为Spring2019.
+
+![apk2](pic/apk2.png)
+
+因此flag为：CTFlearn{Spring2019_is_not_secure!}
