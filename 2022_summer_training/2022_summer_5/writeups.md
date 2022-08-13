@@ -173,7 +173,7 @@ print(len(eat), ' ', len(eats))
 
 ![r3](pic/r3.png)
 
-str可以通过选中后Edit->Export Data导出。根据伪代码可以写出脚本。
+str可以通过选中后Edit->Export Data导出。根据伪代码可以写出脚本。（对LOBYTE这个函数或许有点疑惑，其实就是获取变量的低8位的值，由于这里的key2是ascii英文字符，低8位跟原值其实一样）
 
 ```python
 str_list = [
