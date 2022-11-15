@@ -48,3 +48,12 @@
 > 小明经常喜欢在文件中藏一些秘密。时间久了便忘记了，你能帮小明找到该文件中的秘密吗？
 
 给一个jpeg文件。右键属性备注中有flag：flag{870c5a72806115cb5439345d8b014396}
+
+## wireshark
+> 黑客通过wireshark抓到管理员登陆网站的一段流量包（管理员的密码即是答案) 注意：得到的 flag 请包上 flag{} 提交
+
+用wireshark打开附件，过滤器中输入http，可以发现有个好像是登录的东西。
+
+![ws](pic/ws.png)
+
+追踪http流，可得密码ffb7567a1d4f4abdffdb54e022f8facd，也即flag：flag{ffb7567a1d4f4abdffdb54e022f8facd}
