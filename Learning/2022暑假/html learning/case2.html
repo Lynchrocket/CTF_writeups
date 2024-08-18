@@ -1,0 +1,31 @@
+<!--case1-->
+<!DOCTYPE html>
+<html lang="zh"> <!--using Chinese-->
+<head>
+    <meta charset="utf-8"> <!--using character set of utf-8-->
+    <title>My second HTML</title>
+    <script> 
+    // need to appoint type="text/javascript" in old type
+        let cnt = 0;
+        function display() {
+            cnt += 1;
+            if (cnt == 10) {
+                alert("乌拉!");
+                cnt = 0;
+            }
+            let para = document.getElementById("d");
+            if (para.innerHTML == "Hello HTML!") {
+                para.innerHTML="Have a nice day!";
+            }
+            else {                
+                para.innerHTML="Hello HTML!";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1 id="d">Hello HTML!</h1>
+    <p><font color="red">try to press the button</font></p>
+    <button onclick="display()">change text</button>
+</body>
+</html>
